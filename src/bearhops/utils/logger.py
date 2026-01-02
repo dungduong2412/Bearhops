@@ -4,7 +4,6 @@ Logging configuration for Bearhops.
 
 import logging
 import sys
-from typing import Any
 
 from bearhops.core.config import settings
 

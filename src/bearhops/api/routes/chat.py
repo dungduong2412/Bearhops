@@ -54,11 +54,5 @@ async def get_conversation_history(conversation_id: str) -> dict:
     Returns:
         Conversation history
     """
-    try:
-        history = await chat_service.get_conversation_history(conversation_id)
-        return {"conversation_id": conversation_id, "history": history}
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Conversation not found: {str(e)}",
-        )
+    history = await chat_service.get_conversation_history(conversation_id)
+    return {"conversation_id": conversation_id, "history": history}
